@@ -95,6 +95,48 @@ Area : <input type="text" name="area" value="{{area}}"></input>m<sup>2</sup><br/
 </body>
 </html>
 ```
+### views.py
+```py
+from django.shortcuts import render
+from django.template  import loader
+from django.shortcuts import render
+
+# Create your views here.
+
+
+
+
+def prismarea(request):
+    context={}
+    context['area'] = "0"
+    context['s'] = "0"
+    context['h'] = "0"
+    if request.method == 'POST':
+        print("POST method is used")
+        s = request.POST.get('length','0')
+        h = request.POST.get('breadth','0')
+        print('request=',request)
+        print('Length=',s)
+        print('Breadth=',h)
+        area = 2*int(s) * int(s)+4*int(s)*int(h)
+        context['area'] = area
+        context['s'] = s
+        context['h'] = h
+        print('Area=',area)
+    return render(request,'myapp/math.html',context)
+```
+### views.py
+```py
+from django.contrib import admin
+from django.urls import path
+from myapp import views
+
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('areaofprism/',views.prismarea,name="areaofprism"),
+
+]
 ## OUTPUT:
 
 ### Home Page:
