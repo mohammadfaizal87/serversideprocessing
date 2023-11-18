@@ -125,7 +125,7 @@ def prismarea(request):
         print('Area=',area)
     return render(request,'myapp/math.html',context)
 ```
-### views.py
+### urls.py
 ```py
 from django.contrib import admin
 from django.urls import path
@@ -137,10 +137,12 @@ urlpatterns = [
     path('areaofprism/',views.prismarea,name="areaofprism"),
 
 ]
+```
 ## OUTPUT:
 
-### Home Page:
+## HOMEPAGE:
 
 
 ## Result:
 
+The program is executed succssfully
