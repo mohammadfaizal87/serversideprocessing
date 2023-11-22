@@ -139,8 +139,8 @@ urlpatterns = [
 ]
 ```
 ## OUTPUT:
+![output png](https://github.com/mohammadfaizal87/serversideprocessing/assets/147139206/038ccfc8-11f2-4b7b-bd0d-8ea5eb870aa5)
 
-## HOMEPAGE:
 
 
 ## Result:
